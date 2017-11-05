@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171103 11:49:32.256" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\Users\suresh.kumar.ragala\PycharmProjects\Task1\TestSuite\TestCase1.robot" id="s1" name="TestCase1">
+<kw type="setup" name="Open browser with given url">
+<arguments>
+<arg>${Browser}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://www.google.com</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20171103 11:49:32.568" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'</msg>
+<status status="PASS" endtime="20171103 11:49:43.174" starttime="20171103 11:49:32.568"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20171103 11:49:44.837" starttime="20171103 11:49:43.175"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:49:44.837" starttime="20171103 11:49:32.568"></status>
+</kw>
+<test id="s1-t1" name="Task one on the basics">
+<kw name="Check google homepage is opened">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@alt='Google']</arg>
+</arguments>
+<status status="PASS" endtime="20171103 11:49:45.193" starttime="20171103 11:49:44.839"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:49:45.193" starttime="20171103 11:49:44.838"></status>
+</kw>
+<kw name="Search for a given text">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name=q</arg>
+<arg>${searchElement}</arg>
+</arguments>
+<msg timestamp="20171103 11:49:45.193" level="INFO">Typing text 'Robot Framework' into text field 'name=q'</msg>
+<status status="PASS" endtime="20171103 11:49:46.671" starttime="20171103 11:49:45.193"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:49:46.671" starttime="20171103 11:49:45.193"></status>
+</kw>
+<kw name="Click on the search button">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@value='Google Search']</arg>
+</arguments>
+<msg timestamp="20171103 11:49:46.672" level="INFO">Clicking element 'xpath=//*[@value='Google Search']'.</msg>
+<status status="PASS" endtime="20171103 11:49:48.476" starttime="20171103 11:49:46.672"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:49:48.476" starttime="20171103 11:49:46.672"></status>
+</kw>
+<kw name="Validate the search result">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>About</arg>
+</arguments>
+<status status="PASS" endtime="20171103 11:49:49.928" starttime="20171103 11:49:48.477"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=resultStats</arg>
+</arguments>
+<assign>
+<var>${searchText}</var>
+</assign>
+<msg timestamp="20171103 11:49:50.478" level="INFO">${searchText} = About 11,10,00,000 results (0.29 seconds) </msg>
+<status status="PASS" endtime="20171103 11:49:50.478" starttime="20171103 11:49:49.928"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Search result contains is ${searchText}</arg>
+</arguments>
+<msg timestamp="20171103 11:49:50.478" level="INFO">Search result contains is About 11,10,00,000 results (0.29 seconds) </msg>
+<status status="PASS" endtime="20171103 11:49:50.478" starttime="20171103 11:49:50.478"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Search result contains is ${searchText}</arg>
+</arguments>
+<status status="PASS" endtime="20171103 11:49:50.478" starttime="20171103 11:49:50.478"></status>
+</kw>
+<kw name="Validate String Is Empty" library="validateString">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20171103 11:49:50.478" level="INFO">${msg} = False</msg>
+<status status="PASS" endtime="20171103 11:49:50.478" starttime="20171103 11:49:50.478"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${msg}</arg>
+<arg>Fail</arg>
+<arg>the page didnt search for an text</arg>
+</arguments>
+<status status="PASS" endtime="20171103 11:49:50.478" starttime="20171103 11:49:50.478"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:49:50.478" starttime="20171103 11:49:48.476"></status>
+</kw>
+<kw name="Click on the images Tab">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[text()='Images']</arg>
+</arguments>
+<msg timestamp="20171103 11:49:50.478" level="INFO">Clicking element 'xpath=//*[text()='Images']'.</msg>
+<status status="PASS" endtime="20171103 11:49:53.426" starttime="20171103 11:49:50.478"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:49:53.427" starttime="20171103 11:49:50.478"></status>
+</kw>
+<kw name="Click on the Robot Framework Icon Image">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//*[@class='rg_l']/img)[1]</arg>
+</arguments>
+<msg timestamp="20171103 11:49:53.428" level="INFO">Clicking element 'xpath=(//*[@class='rg_l']/img)[1]'.</msg>
+<status status="PASS" endtime="20171103 11:49:54.232" starttime="20171103 11:49:53.427"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:49:54.232" starttime="20171103 11:49:53.427"></status>
+</kw>
+<kw name="Wait for 3 seconds">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20171103 11:49:57.233" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20171103 11:49:57.233" starttime="20171103 11:49:54.233"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:49:57.233" starttime="20171103 11:49:54.232"></status>
+</kw>
+<tags>
+<tag>Task1</tag>
+</tags>
+<status status="PASS" endtime="20171103 11:49:57.233" critical="yes" starttime="20171103 11:49:44.837"></status>
+</test>
+<kw type="teardown" name="Close the browser">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20171103 11:50:00.875" starttime="20171103 11:49:57.235"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:50:00.875" starttime="20171103 11:49:57.235"></status>
+</kw>
+<status status="PASS" endtime="20171103 11:50:00.875" starttime="20171103 11:49:32.271"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Task1</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestCase1" pass="1">TestCase1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20171103 11:49:32.256" level="ERROR">Error in file 'C:\Users\suresh.kumar.ragala\PycharmProjects\Task1\TestSuite\TestCase1.robot': Setting 'Documentation' used multiple times.</msg>
+</errors>
+</robot>
